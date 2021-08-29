@@ -1,20 +1,24 @@
 module.exports = {
-  mode: "jit",
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: [
-    "./public/**/*.html",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-  ],
+  mode: 'jit',
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        '0.1': '0.063rem'
+      },
+      colors: {
+        'brand-color': '#4c3398',
+        'primary-brand-color': '#5d3ebc',
+        'secondary-brand-color': '#7849f7',
+        'brand-yellow': '#ffd300'
+      }
+    },
+
   },
   variants: {
-    extend: {},
+    extend: {
+    },
   },
   plugins: [],
-};
+}
