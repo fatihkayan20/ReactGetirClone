@@ -64,7 +64,7 @@ const Footer = (props: FooterProps) => {
           <div
             className={`relative overflow-hidden transition-all duration-700 text-sm my-1 opacity-60 flex flex-col gap-y-1  ${getItemClassNames(
               0
-            )}  max-h-full scale-100 `}
+            )}  !max-h-full !scale-100 `}
           >
             <div>Hakkımızda</div>
             <div>Kariyer</div>
@@ -90,7 +90,7 @@ const Footer = (props: FooterProps) => {
           <div
             className={`relative overflow-hidden transition-all duration-700 text-sm my-1 opacity-60 flex flex-col gap-y-1  ${getItemClassNames(
               1
-            )} max-h-full scale-100`}
+            )} !max-h-full !scale-100`}
           >
             <div>Sıkça Sorulan Sorular</div>
             <div>Kişilsel Verilerin Korunması</div>
@@ -116,7 +116,7 @@ const Footer = (props: FooterProps) => {
           <div
             className={`relative overflow-hidden transition-all duration-700 text-sm my-1 opacity-60 flex flex-col gap-y-1  ${getItemClassNames(
               2
-            )} max-h-full scale-100`}
+            )} !max-h-full !scale-100`}
           >
             <div>Bayimiz Olun</div>
             <div>Depomuzu Kiralayın</div>

@@ -1,24 +1,34 @@
 import { useEffect, useState } from "react";
-import { CAMPAIGNS } from "../../../util/constants";
 import { HiLocationMarker } from "react-icons/hi";
 import { AiOutlineRight } from "react-icons/ai";
+import { Campaign } from "../../../interfaces/Campaign";
+import { getCampaigns } from "../../../api";
 
 interface CampaignsProps {
   slideDelay: number;
 }
 
 const Campaigns = ({ slideDelay }: CampaignsProps) => {
+  const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [active, setActive] = useState(0);
 
   useEffect(() => {
+    let fetchCampaigns = async () => {
+      let campaignArray = await getCampaigns();
+      setCampaigns(campaignArray);
+    };
+    fetchCampaigns();
+  }, []);
+
+  useEffect(() => {
     let slide = setInterval(() => {
-      let next = (active + 1) % CAMPAIGNS.length;
+      let next = (active + 1) % campaigns.length;
       setActive(next);
     }, slideDelay);
     return () => {
       clearInterval(slide);
     };
-  }, [active, slideDelay]);
+  }, [active, campaigns.length, slideDelay]);
 
   return (
     <div className="px-5 pb-5">
@@ -34,14 +44,14 @@ const Campaigns = ({ slideDelay }: CampaignsProps) => {
         <AiOutlineRight color={"rgb(93, 56, 192)"} size={18} />
       </div>
       <div className="flex overflow-hidden">
-        {CAMPAIGNS.map((image, index) => {
+        {campaigns.map(({ url }, index) => {
           const transformX = `translateX(calc(${active * -100}% - ${
             active * 1.25
           }rem))`;
           return (
             <img
               key={index}
-              src={image}
+              src={url}
               alt=""
               className=" object-cover   rounded-lg mr-5 transition-all duration-1000 sm:w-[400px] sm:h-[200px]"
               style={{ transform: transformX }}

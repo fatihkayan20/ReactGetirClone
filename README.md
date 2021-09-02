@@ -7,6 +7,7 @@ This is an app created with react and tailwind css.
 - Create-react-app
 - TailwindCss
 - ReactIcons
+- MockAPI
 
 ## Screenshots in app
 

@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import { FaFacebook } from "react-icons/fa";
-import { COUNTRIES } from "../../../util/constants";
+import { getCountries } from "../../../api";
+import { Country } from "../../../interfaces/Country";
 
 interface LoginCardProps {}
 
 const LoginCard = (props: LoginCardProps) => {
+  const [countries, setCountries] = useState<Country[]>([]);
+  useEffect(() => {
+    let fetchData = async () => {
+      const data = await getCountries();
+      setCountries(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className="container mx-auto px-5 pb-8 pt-5">
       <div className="text-center text-purple-800 font-semibold">
@@ -12,7 +23,7 @@ const LoginCard = (props: LoginCardProps) => {
 
       <div className="flex items-center my-3">
         <select name="" id="" className="border-2 py-2 px-2">
-          {COUNTRIES.map((country) => (
+          {countries.map((country) => (
             <option className="">
               {country.name}&emsp;{country.code}
             </option>

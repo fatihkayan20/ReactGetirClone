@@ -1,32 +1,51 @@
 import { useEffect, useState } from "react";
 import { FaFacebook } from "react-icons/fa";
-import { COUNTRIES, IMAGES } from "../../../util/constants";
+import { getCountries, getImages } from "../../../api";
+import { Country } from "../../../interfaces/Country";
+import { Image } from "../../../interfaces/Image";
 
 interface SliderProps {
   slideDelay: number;
 }
 
 const Slider = ({ slideDelay }: SliderProps) => {
+  const [images, setImages] = useState<Image[]>([]);
   const [active, setActive] = useState(0);
+  const [countries, setCountries] = useState<Country[]>([]);
+
+  useEffect(() => {
+    let fetchData = async () => {
+      const data = await getCountries();
+      setCountries(data);
+    };
+    fetchData();
+  }, []);
+  useEffect(() => {
+    let fetchImages = async () => {
+      let imageArray = await getImages();
+      setImages(imageArray);
+    };
+    fetchImages();
+  }, []);
 
   useEffect(() => {
     let slide = setInterval(() => {
-      let next = (active + 1) % IMAGES.length;
+      let next = (active + 1) % images.length;
       setActive(next);
     }, slideDelay);
     return () => {
       clearInterval(slide);
     };
-  }, [active, slideDelay]);
+  }, [active, images.length, slideDelay]);
 
   return (
     <div className="relative h-[500px] w-full flex items-center  overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-r before:from-purple-500 before:to-transparent before:z-10  ">
-      {IMAGES.map((image, index) => {
+      {images.map(({ url }, index) => {
         const transformX = `translateX(${active * -100}%)`;
         return (
           <img
             key={index}
-            src={image}
+            src={url}
             alt=""
             className="object-cover w-full h-full min-w-full transition-all duration-1000"
             style={{ transform: transformX }}
@@ -52,7 +71,7 @@ const Slider = ({ slideDelay }: SliderProps) => {
 
           <div className="flex items-center my-3">
             <select name="" id="" className="border-2 py-1 px-2">
-              {COUNTRIES.map((country) => (
+              {countries.map((country) => (
                 <option className="">
                   {country.name}&emsp;{country.code}
                 </option>
