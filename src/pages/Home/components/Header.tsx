@@ -24,7 +24,7 @@ const Header = () => {
 
   return (
     <div className="bg-purple-900 h-11 sm:fixed top-0 left-0 w-full z-50">
-      <div className="mx-auto container h-full flex items-center justify-between overflow-hidden">
+      <div className="px-5 h-full flex items-center justify-between overflow-hidden">
         <div className="flex items-center gap-x-2">
           <div
             className={`flex items-center gap-x-2 text-white text-sm cursor-pointer h-full p-2 pb-5 -mb-3 rounded-md hover:bg-purple-800 ${getClassName(

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MOBILE_APP_BANNER } from "../../../util/constants";
 
 interface FooterProps {}
