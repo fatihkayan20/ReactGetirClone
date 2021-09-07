@@ -1,4 +1,5 @@
 {
+  "homepage": "https://fatihkayan20.github.io/ReactGetirClone",
   "name": "getir-clone",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
@@ -25,7 +27,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "npx tailwindcss -i tailwind.css -o src/style.css --watch"
+    "watch": "npx tailwindcss -i tailwind.css -o src/style.css --watch",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
