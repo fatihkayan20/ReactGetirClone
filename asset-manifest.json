@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/ReactGetirClone/static/css/main.cdede9ae.chunk.css",
-    "main.js": "/ReactGetirClone/static/js/main.952602f1.chunk.js",
-    "main.js.map": "/ReactGetirClone/static/js/main.952602f1.chunk.js.map",
+    "main.css": "/ReactGetirClone/static/css/main.ee8f2560.chunk.css",
+    "main.js": "/ReactGetirClone/static/js/main.c3888903.chunk.js",
+    "main.js.map": "/ReactGetirClone/static/js/main.c3888903.chunk.js.map",
     "runtime-main.js": "/ReactGetirClone/static/js/runtime-main.77272296.js",
     "runtime-main.js.map": "/ReactGetirClone/static/js/runtime-main.77272296.js.map",
     "static/js/2.6b6e253a.chunk.js": "/ReactGetirClone/static/js/2.6b6e253a.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.ba5a0317.chunk.js": "/ReactGetirClone/static/js/3.ba5a0317.chunk.js",
     "static/js/3.ba5a0317.chunk.js.map": "/ReactGetirClone/static/js/3.ba5a0317.chunk.js.map",
     "index.html": "/ReactGetirClone/index.html",
-    "static/css/main.cdede9ae.chunk.css.map": "/ReactGetirClone/static/css/main.cdede9ae.chunk.css.map",
+    "static/css/main.ee8f2560.chunk.css.map": "/ReactGetirClone/static/css/main.ee8f2560.chunk.css.map",
     "static/js/2.6b6e253a.chunk.js.LICENSE.txt": "/ReactGetirClone/static/js/2.6b6e253a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.77272296.js",
     "static/js/2.6b6e253a.chunk.js",
-    "static/css/main.cdede9ae.chunk.css",
-    "static/js/main.952602f1.chunk.js"
+    "static/css/main.ee8f2560.chunk.css",
+    "static/js/main.c3888903.chunk.js"
   ]
 }
